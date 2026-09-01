@@ -1,0 +1,40 @@
+# 簡報發佈僅需 index.html 與 5 張圖片，其餘一律忽略
+
+# --- 保留清單（不會被忽略）---
+# index.html
+# 01-home.png
+# 02-download-hero.png
+# 03-SAAA-deident.png
+# 04-clip-sanshibaba.png
+# 13-free-notes.png
+
+# --- 全部預設忽略，再白名單放行 ---
+*
+!*/
+!.gitignore
+!index.html
+!01-home.png
+!02-download-hero.png
+!03-SAAA-deident.png
+!04-clip-sanshibaba.png
+!13-free-notes.png
+
+# 若日後新增簡報圖片，請在此白名單追加 !檔名
+
+# --- 明確忽略（即使上方誤設也確保不進版控）---
+Snipaste_*.png
+*.bak
+*.docx
+*.doc
+*.xlsx
+*.xls
+Thumbs.db
+.DS_Store
+.omo/
+.codegraph/
+學力檢測分析資料/
+learning-analysis-pack/
+build_diag_center.py
+diag.py
+diag2.py
+學生學習診斷中心_*.html

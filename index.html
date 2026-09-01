@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>新竹縣115學年度中小學教務主任會議 | OpenCode</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.min.css" />
+<style>
+:root{
+  --bg:#0a0a0b;
+  --panel:#141416;
+  --panel2:#1c1c1f;
+  --line:#2a2a2e;
+  --yellow:#ffe600;
+  --coral:#ff4d4d;
+  --mint:#34d399;
+  --muted:#9aa0a6;
+}
+*{box-sizing:border-box}
+.reveal{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;background:radial-gradient(900px 600px at 70% 10%, rgba(255,230,0,.08), transparent 60%), radial-gradient(700px 500px at 10% 90%, rgba(52,211,153,.06), transparent 60%), var(--bg)}
+.reveal .slides{ text-align:left }
+.reveal h1,.reveal h2,.reveal h3{ text-transform:none; letter-spacing:.02em }
+.reveal h1{ font-size:1.55em; line-height:1.15 }
+.reveal h2{ font-size:1.15em }
+.reveal p, .reveal li{ font-size:.58em; line-height:1.7; color:#e8e8ea }
+.reveal small{ color:var(--muted) }
+.badge{display:inline-flex;align-items:center;gap:.4em;font-size:.38em;letter-spacing:.12em;text-transform:uppercase;color:#0a0a0b;background:var(--yellow);padding:.35em .7em;border-radius:999px;font-weight:800}
+.badge.dark{background:#1f1f22;color:#ffe600;border:1px solid #2d2d30}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));border:1px solid var(--line);border-radius:18px;padding:18px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){ .grid2{grid-template-columns:1fr} .grid3{grid-template-columns:1fr} .reveal h1{font-size:1.15em} }
+.kicker{color:var(--yellow);font-size:.42em;letter-spacing:.14em;font-weight:800}
+.hero-title{font-size:1.35em;font-weight:900;line-height:1.2}
+.hero-title span{color:var(--yellow)}
+.sub{color:#c7c7cc;font-size:.52em;line-height:1.7}
+.divider{height:1px;background:var(--line);margin:10px 0}
+.btn{appearance:none;border:none;border-radius:12px;padding:14px 16px;font-weight:800;cursor:pointer;transition:.18s transform, .18s opacity, .18s background, .18s border-color}
+.btn:active{transform:scale(.98)}
+.btn-yes{background:var(--yellow);color:#111}
+.btn-no{background:#1f1f22;color:#fff;border:1px solid #2e2e32}
+.btn-ghost{background:transparent;color:#fff;border:1px solid #2e2e32}
+.btn:hover{opacity:.95}
+.vote-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:stretch}
+.vote-wrap.centered{max-width:980px;margin:0 auto}
+.vote-center{text-align:center}
+.vote-center .kicker, .vote-center h2{ text-align:center }
+@media(max-width:860px){.vote-wrap{grid-template-columns:1fr}}
+.bar-row{display:grid;grid-template-columns:54px 1fr 78px;gap:10px;align-items:center;margin:10px 0}
+.bar-label{font-size:.42em;font-weight:800;letter-spacing:.06em;color:#fff;display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%}
+.dot-yes{background:var(--yellow)}
+.dot-no{background:#60a5fa}
+.bar-track{height:22px;background:#18181b;border:1px solid #27272a;border-radius:999px;overflow:hidden;position:relative}
+.bar-fill{height:100%;width:0%;border-radius:999px;transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.fill-yes{background:var(--yellow)}
+.fill-no{background:#60a5fa}
+.bar-val{font-size:.44em;font-weight:800;color:#fff;text-align:right}
+.stat{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.stat div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:110px;text-align:center}
+.stat b{font-size:1.05em;color:#fff}
+.stat span{font-size:.36em;color:var(--muted)}
+.warn{border:1px solid rgba(255,77,77,.55);background:rgba(255,77,77,.08);border-radius:14px;padding:12px 14px}
+.warn strong{color:#ff8a8a}
+.model{padding:12px 12px;border-radius:14px;background:#151518;border:1px solid #26262a}
+.model b{font-size:.48em;color:#fff}
+.model p{font-size:.38em;color:#cbd5d8;margin:.25em 0 0}
+.model.cn{border-left:4px solid var(--coral); background:linear-gradient(180deg, rgba(255,77,77,.08), rgba(255,255,255,.01))}
+.model.us{border-left:4px solid var(--mint)}
+.model.unk{border-left:4px solid var(--yellow)}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--yellow);color:#111;display:inline-grid;place-items:center;font-weight:900;font-size:.42em;margin-right:8px}
+.img-frame{background:#0f0f10;border:1px solid #2a2a2e;border-radius:16px;overflow:hidden}
+.img-frame img{width:100%;display:block}
+.caption{font-size:.34em;color:var(--muted);padding:8px 10px;background:#111113;border-top:1px solid #222}
+.hl{color:var(--yellow);font-weight:800}
+.progress{color:var(--yellow) !important}
+.controls{color:var(--yellow) !important}
+.reveal .slide-number{background:rgba(255,230,0,.95) !important;color:#111 !important;font-weight:800}
+small a{color:#ffe600}
+code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.inline-code{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:.15em .4em;font-size:.9em}
+.icon{font-size:.95em}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1 Cover -->
+<section>
+  <div class="badge">新竹縣115學年度 · 中小學教務主任會議</div>
+  <div style="height:14px"></div>
+  <div class="kicker">新竹縣115學年度中小學教務主任會議</div>
+  <h1 class="hero-title" style="margin:.25em 0 .2em">助教研習課<br><span>AI 可以怎麼幫你分析</span><br>學力檢測資料</h1>
+  <p class="sub" style="max-width:26em">將 <span class="hl">OpenCode</span> 作為專屬資料分析助理，透過資料視覺化系統性發掘學生學習盲點。</p>
+</section>
+
+<!-- 2 Poll -->
+<section class="vote-center">
+  <div class="kicker">02 · 現場調查</div>
+  <h2 style="text-align:center">是否曾使用 <span class="hl">Codex / Claude Code / Antigravity</span> 等 AI 編碼代理？</h2>
+  <div class="vote-wrap centered" style="text-align:left">
+    <div class="card">
+      <p style="margin:0 0 8px;font-size:.40em;color:#cbd5d8;text-align:center">請點選下列選項，系統將即時呈現統計結果。每部裝置限投一次，投後可變更選擇。</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 6px">
+        <button class="btn btn-yes" id="voteYes">是，曾使用</button>
+        <button class="btn btn-no" id="voteNo">否，尚未使用</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;justify-content:center">
+        <button class="btn btn-ghost" id="resetBtn" style="font-size:.36em;padding:8px 10px">重設示範數據</button>
+        <span style="font-size:.34em;color:var(--muted);align-self:center" id="voteHint">採單機防重複投票機制（localStorage）</span>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div><b id="totalVotes">0</b><br><span>總投票數</span></div>
+        <div><b id="yesPct">0%</b><br><span>是</span></div>
+        <div><b id="noPct">0%</b><br><span>否</span></div>
+      </div>
+      <p style="font-size:.32em;color:var(--muted);margin:8px 0 0;text-align:center">建議主持人先執行「重設示範數據」，再引導與會者同步投票，以利掌握現場情形。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:.38em;letter-spacing:.08em;font-weight:800;color:#fff;margin-bottom:6px;text-align:center">即時統計圖表</div>
+      <div class="bar-row">
+        <div class="bar-label"><span class="dot dot-yes"></span> 是</div>
+        <div class="bar-track"><div class="bar-fill fill-yes" id="barYes"></div></div>
+        <div class="bar-val" id="valYes">0 票 · 0%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span class="dot dot-no"></span> 否</div>
+        <div class="bar-track"><div class="bar-fill fill-no" id="barNo"></div></div>
+        <div class="bar-val" id="valNo">0 票 · 0%</div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:.32em;color:var(--muted);margin:0;text-align:center">本頁為單機示範模式，投票紀錄儲存於本機瀏覽器，重新載入後仍予保留。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 Origin -->
+<section>
+  <div class="grid2">
+    <div>
+      <div class="kicker">03 · Opencode 簡介</div>
+      <h2 style="margin:.2em 0 .2em">OpenCode 是什麼？</h2>
+      <p style="font-size:.42em;color:var(--yellow);font-weight:800;margin:0 0 8px;letter-spacing:.06em">開源 AI 編碼代理 · 美國製作</p>
+      <div class="card">
+        <p style="margin:0"><b style="color:#fff">定義</b>：OpenCode 為開源之 <b>AI 編碼代理（AI coding agent）</b>，可於終端機、桌面應用程式、VS Code 及網頁介面中，串接大型語言模型，協助撰寫、閱讀及修改程式碼。</p>
+        <div class="divider"></div>
+        <ul style="margin:0 0 0 1.1em">
+          <li><b>開發團隊</b>：<span class="hl">美國 Anomaly Innovations, Inc.</span>（舊金山，品牌 Anomaly / anomalyco）。</li>
+          <li><b>公開資訊</b>：官方網站 <code class="inline-code">opencode.ai</code>、GitHub <code class="inline-code">anomalyco/opencode</code>（MIT 授權）。</li>
+          <li><b>核心特性</b>：支援 75 種以上模型供應商、本地模型部署、團隊版 Zen 及多元 IDE / CLI 整合。</li>
+          <li><b>產製地區</b>：服務條款與隱私權政策載明主體為美國企業，準據法為美國德拉瓦州，非中國製產品。</li>
+        </ul>
+      </div>
+      <p style="margin-top:8px"><small>來源：<a href="https://opencode.ai" target="_blank" rel="noreferrer">opencode.ai</a>、<a href="https://opencode.ai/docs/models" target="_blank" rel="noreferrer">/docs/models</a>、<a href="https://opencode.ai/legal/terms-of-service" target="_blank" rel="noreferrer">Terms</a>、<a href="https://opencode.ai/legal/privacy-policy" target="_blank" rel="noreferrer">Privacy</a>、<a href="https://github.com/anomalyco/opencode" target="_blank" rel="noreferrer">GitHub</a></small></p>
+    </div>
+    <div>
+      <div class="card">
+        <div style="font-size:.38em;font-weight:800;letter-spacing:.08em;color:#fff">為何本研習納入此工具？</div>
+        <div class="grid2" style="grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+          <div class="model"><b>開源可驗證</b><p>程式碼公開，更新頻繁，社群活躍度高。</p></div>
+          <div class="model"><b>不綁定單一模型</b><p>可介接 GPT、Claude、Gemini 及開源模型。</p></div>
+          <div class="model"><b>適於資料處理</b><p>可批次讀取表格、轉換格式、繪製圖表及產製報表。</p></div>
+          <div class="model"><b>可本地執行</b><p>搭配本地模型，降低敏感資料外送之風險。</p></div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:.34em;color:#cbd5d8;margin:0"><span class="icon">💡</span> 縱使工具於本地端執行，若串接雲端模型，提示內容仍可能經網路傳輸；各類模型均可能蒐集資料以進行分析。</p>
+      </div>
+      <div class="warn" style="margin-top:12px">
+        <div style="font-size:.42em;font-weight:800;color:#ffd0d0"><span class="icon">🎯</span> 核心提醒</div>
+        <div style="font-size:.38em;color:#fff;margin-top:4px">OpenCode 本身為 <b>美國 Anomaly 團隊</b>所開發之開源專案；惟其所串接之模型分屬不同國家與企業，選用時應審慎評估資料流向。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Clip -->
+<section style="padding-top:6px">
+  <div class="kicker">04 · 現場剪報</div>
+  <h2 style="margin:.12em 0 .06em;font-size:1.02em">OpenCode 並非小眾工具：臺灣教育現場已有教師投入實務應用</h2>
+  <p style="font-size:.32em;color:var(--muted);margin:0 0 8px">客觀呈現社群應用現況，作為導入評估之參考依據</p>
+  <div class="grid2" style="gap:12px;align-items:start">
+    <div class="img-frame" style="max-height:508px;display:flex;flex-direction:column"><img src="04-clip-sanshibaba.png" alt="三師爸 OpenCode 基本功 EP07 剪報" style="object-fit:contain;flex:1;min-height:0" loading="lazy" /><div class="caption">圖：公開影音平台教學系列「OpenCode 基本功 EP07」截圖 · 僅作為社群應用現況之客觀呈現</div></div>
+    <div class="card" style="padding:12px 12px;max-height:508px;overflow-y:auto">
+      <div style="font-size:.34em;font-weight:800;color:#fff;letter-spacing:.06em">臺灣已有教師投入 OpenCode 之實務應用</div>
+      <div style="display:grid;gap:8px;margin-top:8px">
+        <div class="model" style="border-left:4px solid var(--yellow)"><b>公開教學資源已形成系列</b><p>相關教學內容於公開影音平台已累積完整系列（本剪報所示 EP07 所屬「OpenCode 基本功」播放清單計 8 部影片），主題涵蓋新版本特性與模型最佳搭配設定，顯示社群持續投入且內容具延續性。</p></div>
+        <div class="model" style="border-left:4px solid var(--mint)"><b>教育工作者之實務案例</b><p>以教育工作者「三師爸」為例，其公開分享如何以 DeepSeek V4 Flash、GPT 5.6 Luna 等模型結合 OpenCode 進行文件處理與行政資料作業，與本研習「學力資料視覺化分析」之應用路徑相符。</p></div>
+        <div class="model" style="border-left:4px solid #60a5fa"><b>成本與可及性具參考價值</b><p>圖中提及「10 美金用到 60 美金的量」之用量優化經驗，反映透過模型選配與資源配置，有助降低試行成本，提升校內導入之可行性。</p></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:0;line-height:1.65">本頁僅就公開資訊進行客觀陳述，不代表對特定頻道或個人之背書；旨在說明 OpenCode 在臺灣已具備一定之教育應用基礎，可作為後續導入評估之參考。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Models -->
+<section style="padding-top:6px">
+  <div class="kicker">05 · 模型與資料蒐集警示</div>
+  <h2 style="margin:.12em 0 .06em;font-size:1.02em">OpenCode 提供哪些模型？</h2>
+  <p style="font-size:.36em;color:#cbd5d8;margin:0 0 8px">聚焦 6 款限時免費模型 · <span style="color:var(--coral);font-weight:800">中國製 2 款</span> · <span style="color:var(--mint);font-weight:800">美國製 3 款</span> · <span style="color:var(--yellow);font-weight:800">來源未公開 1 款</span></p>
+  <div class="grid2" style="gap:12px;align-items:start">
+    <div class="card" style="padding:12px 12px;max-height:508px;overflow-y:auto">
+      <div style="font-size:.34em;font-weight:800;color:#fff;letter-spacing:.06em">限時免費 6 款 · 官方說明「將蒐集回饋以改進模型」</div>
+      <div style="display:grid;gap:7px;margin-top:8px">
+        <div class="model cn" style="padding:9px 10px"><b style="font-size:.44em">MiMo-V2.5 Free</b><p style="font-size:.34em">中國 · 小米（Xiaomi）· 限時免費並蒐集回饋以改進模型。</p></div>
+        <div class="model cn" style="padding:9px 10px"><b style="font-size:.44em">Ling 3.0 Flash Fin Free</b><p style="font-size:.34em">中國 · 金融領域微調版本 · 限時免費並蒐集回饋。<br><small><a href="https://www.orcarouter.ai/zh-TW/blog/what-is-ling-3-0-flash-fin" target="_blank" rel="noreferrer">orcarouter.ai 介紹</a></small></p></div>
+        <div class="model us" style="padding:9px 10px"><b style="font-size:.44em">Nemotron 3 Ultra Free</b><p style="font-size:.34em">美國 · NVIDIA · 試用性質，將記錄使用情形以改進服務。</p></div>
+        <div class="model us" style="padding:9px 10px"><b style="font-size:.44em">Nemotron 3.5 Lightning Free</b><p style="font-size:.34em">美國 · NVIDIA · 同上，請勿提交機密內容。</p></div>
+        <div class="model unk" style="padding:9px 10px"><b style="font-size:.44em">Big Pickle</b><p style="font-size:.34em">來源未公開 · 隱身模型，限時免費並蒐集回饋。</p></div>
+        <div class="model us" style="padding:9px 10px"><b style="font-size:.44em">Muse Spark 1.2 Contributor Free</b><p style="font-size:.34em">美國 · Meta · 以較低費率換取得使用提示與回覆以訓練後續模型。<br><small><a href="https://developer.meta.com/ai/models/muse-spark/" target="_blank" rel="noreferrer">developer.meta.com/muse-spark</a></small></p></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;max-height:508px">
+      <div class="img-frame" style="flex-shrink:0"><img src="13-free-notes.png" alt="免費模型說明截圖" loading="lazy" /><div class="caption">圖：官方「免費模型」說明 · 紅框處載明限時免費與蒐集回饋</div></div>
+      <div class="warn" style="padding:10px 12px">
+        <div style="font-size:.4em;font-weight:900;color:#fff">⚠️ 嚴禁上傳個人資料</div>
+        <div style="font-size:.34em;color:#ffd0d0;line-height:1.65;margin-top:4px">
+          免費期間<b>可能蒐集提示與回覆內容</b>。<br>
+          <strong>嚴禁上傳</strong>：學生姓名、學號、身分證字號、聯絡方式、學力檢測原始個人資料及校內機密資訊。<br>
+          建議：先行去識別化（以編號替代姓名），僅上傳彙整後數據。
+        </div>
+      </div>
+      <p style="font-size:.28em;color:var(--muted);margin:0;line-height:1.5">來源：<a href="https://opencode.ai/zen" target="_blank" rel="noreferrer">opencode.ai/zen</a> 定價與隱私權段落；付費 Zen 多為零保留（OpenAI/Anthropic 30 日）。<br>卡片顏色：<span style="color:var(--coral)">紅=中國</span> <span style="color:var(--mint)">綠=非中國</span> <span style="color:var(--yellow)">黃=未公開</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Install 1 -->
+<section>
+  <div class="kicker">06 · 安裝教學 1/2</div>
+  <h2>步驟一：開啟官方網站，進入下載頁面</h2>
+  <div class="grid2">
+    <div class="img-frame"><img src="01-home.png" alt="OpenCode 官網首頁" loading="lazy" /><div class="caption">圖 1：<code class="inline-code">https://opencode.ai/zh</code> → 點選右上角「下載」</div></div>
+    <div class="card">
+      <div><span class="step-num">1</span><b style="color:#fff">開啟官方網站</b></div>
+      <p style="margin:6px 0 0">請於瀏覽器輸入 <code class="inline-code">https://opencode.ai/zh</code></p>
+      <div class="divider"></div>
+      <div><span class="step-num">2</span><b style="color:#fff">點選右上角「下載」</b></div>
+      <p style="margin:6px 0 0">首頁右上角設有白色 <b>「↓ 下載」</b> 按鈕（紅框標示），點選後即進入下載頁面。</p>
+      <div class="divider"></div>
+      <p style="font-size:.34em;color:#cbd5d8;margin:0">若首頁顯示為英文，請於右下角切換語言為 <b>繁體中文</b>。</p>
+      <div style="margin-top:10px;background:#18181b;border:1px solid #27272a;border-radius:12px;padding:10px 12px;text-align:center">
+        <div style="font-size:.4em;color:#fff;font-weight:800">本研習僅說明 Windows 桌面版之安裝流程</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Install 2 -->
+<section>
+  <div class="kicker">07 · 安裝教學 2/2</div>
+  <h2>步驟二：下載並安裝 Windows 版本</h2>
+  <div class="grid2">
+    <div class="img-frame"><img src="02-download-hero.png" alt="下載 Windows 版按鈕" loading="lazy" /><div class="caption">圖 2：點選「↓ 下載 Windows 版」→ 取得 NSIS 安裝檔（約 126 MB）</div></div>
+    <div class="card">
+      <div style="font-size:.58em"><span class="step-num">3</span><b style="color:#fff">點選「下載 Windows 版」</b></div>
+      <p style="margin:6px 0 0">請於下載頁面中央點選 <b>「↓ 下載 Windows 版」</b>（紅框按鈕）。</p>
+      <div class="divider"></div>
+      <div style="font-size:.58em"><span class="step-num">4</span><b style="color:#fff">執行安裝程式</b></div>
+      <ul style="margin:6px 0 0 1.1em;font-size:.8em">
+        <li>取得 <code class="inline-code">opencode-desktop-windows-x64.exe</code></li>
+        <li>雙擊執行安裝程式，依 NSIS 精靈指示完成安裝</li>
+        <li>安裝完成後，於開始選單搜尋 <b>OpenCode</b> 即可啟動</li>
+      </ul>
+      <div class="divider"></div>
+      <div style="font-size:.34em;color:#cbd5d8">安裝完成後，選用 OpenCode 提供之限時免費模型（本研習以 <b>Muse Spark 1.2 Free</b>、<b>Nemotron 3.5 Lightning Free</b> 及 <b>Nemotron 3 Ultra Free</b> 作為示範與操作模型），即可進行學力檢測資料之分析。</div>
+      <div class="warn" style="margin-top:10px;padding:10px 12px">
+        <div style="font-size:.34em;color:#ffd0d0"><b>再次提醒：</b>若使用限時免費模型，請務必確認已完成去識別化，再行貼上資料。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Deident -->
+<section style="padding-top:6px">
+  <div class="kicker">08 · 資料去識別化</div>
+  <h2 style="margin:.12em 0 .06em;font-size:1.02em">資料去識別化 — 分析前之必要程序</h2>
+  <p style="font-size:.32em;color:var(--muted);margin:0 0 8px">工具：<a href="https://liangchengyu-ntcu.github.io/SAAA-Deidentification-Tool/" target="_blank" rel="noreferrer">SAAA 學生學習能力檢測去識別化工具 v2.0</a> · <span style="color:#34d399;font-weight:800">100% 本地端運算 · 零個資上傳</span> · 依現行個人資料保護規範辦理</p>
+  <div class="grid2" style="gap:12px;align-items:start">
+    <div class="img-frame" style="max-height:508px;display:flex;flex-direction:column"><img src="03-SAAA-deident.png" alt="SAAA 去識別化工具截圖" style="object-fit:contain;flex:1;min-height:0" loading="lazy" /><div class="caption">圖：SAAA 去識別化工具 v2.0 介面 · 以此截圖為準 · <a href="https://liangchengyu-ntcu.github.io/SAAA-Deidentification-Tool/" target="_blank" rel="noreferrer">開啟工具 →</a></div></div>
+    <div class="card" style="padding:12px 12px;max-height:508px;overflow-y:auto">
+      <div style="display:grid;gap:9px">
+        <div style="background:#151518;border:1px solid #26262a;border-left:4px solid var(--yellow);border-radius:12px;padding:9px 10px">
+          <div><span class="step-num">1</span><b style="color:#fff;font-size:.42em">選取或拖入評量檔案 / 資料夾 / Zip</b></div>
+          <p style="font-size:.32em;color:#cbd5d8;margin:4px 0 0;line-height:1.65">將「個人成績」「作答反應」「班平均」「答對率」或整體評量目錄，以拖曳或選取方式匯入。支援單檔、多檔、整體資料夾及 <code class="inline-code">.zip</code> 壓縮檔批次處理。所有檔案於瀏覽器本地端解析，不經網路傳輸。</p>
+        </div>
+        <div style="background:#151518;border:1px solid #26262a;border-left:4px solid var(--mint);border-radius:12px;padding:9px 10px">
+          <div><span class="step-num">2</span><b style="color:#fff;font-size:.42em">選擇去識別化模式</b></div>
+          <p style="font-size:.32em;color:#cbd5d8;margin:4px 0 0;line-height:1.65">依資料用途擇一辦理：<br>
+          <b style="color:#fff">研究分析模式（推薦）</b>：學生姓名轉為跨表一致之匿名代號（如 STU_112_0001），自動產出 <code class="inline-code">mapping_table.xlsx</code> 對照表供校內留存，座號移除並對校名、縣市採脫敏處理；<br>
+          <b style="color:#fff">公開資料模式</b>：徹底刪除姓名與座號單位，校名與縣市脫敏且不保留任何逆對照表，適用於對外公開；<br>
+          <b style="color:#fff">校內避難模式</b>：姓名採規則遮罩（如 林*成），保留原始欄位與座號結構，適用於校內教學研討。請審慎擇定，一經產出難以回溯。</p>
+        </div>
+        <div style="background:#151518;border:1px solid #26262a;border-left:4px solid #60a5fa;border-radius:12px;padding:9px 10px">
+          <div><span class="step-num">3</span><b style="color:#fff;font-size:.42em">機關別名與參數微調</b></div>
+          <p style="font-size:.32em;color:#cbd5d8;margin:4px 0 0;line-height:1.65">設定「學校替換名稱」「學校代碼別名（如 SCH01）」「縣市替換別名」、座號欄位處理（移除座號 / 保留）及檔案輸出格式（Excel + JSON 雙格式）。參數應與校內行政一致性核對，確認輸出內容無殘留可識別資訊後，再行進入後續 AI 分析流程。完成後點選「開始執行去識別化並打包下載」取得已處理之資料集。</p>
+        </div>
+      </div>
+      <div class="warn" style="margin-top:9px;padding:8px 10px">
+        <div style="font-size:.32em;color:#ffd0d0;line-height:1.6"><b>嚴正提醒：</b>未完成去識別化之原始檔案，不得上傳至任何雲端模型或對外發布。對照表應由專責人員妥善保管，不得與去識別化後資料一併流通。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash:true,
+  slideNumber:true,
+  transition:'slide',
+  backgroundTransition:'fade',
+  width:1280,
+  height:720,
+  margin:0.04,
+  controls:true,
+  progress:true,
+  center:false
+});
+
+// --- Local poll (no Firebase) ---
+const LS_KEY='opencode-0904-poll-v1';
+const els={
+  yes:document.getElementById('voteYes'),
+  no:document.getElementById('voteNo'),
+  reset:document.getElementById('resetBtn'),
+  total:document.getElementById('totalVotes'),
+  yesPct:document.getElementById('yesPct'),
+  noPct:document.getElementById('noPct'),
+  barYes:document.getElementById('barYes'),
+  barNo:document.getElementById('barNo'),
+  valYes:document.getElementById('valYes'),
+  valNo:document.getElementById('valNo'),
+  hint:document.getElementById('voteHint')
+};
+function load(){
+  try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {yes:7,no:9, my:'', seeded:true} }catch{ return {yes:7,no:9, my:'', seeded:true} }
+}
+function save(s){ localStorage.setItem(LS_KEY, JSON.stringify(s)) }
+let state=load();
+function render(){
+  const total=state.yes+state.no;
+  const yp= total? Math.round(state.yes/total*100):0;
+  const np= total? 100-yp:0;
+  els.total.textContent=String(total);
+  els.yesPct.textContent=yp+'%';
+  els.noPct.textContent=np+'%';
+  els.barYes.style.width=yp+'%';
+  els.barNo.style.width=np+'%';
+  els.valYes.textContent= state.yes+' 票 · '+yp+'%';
+  els.valNo.textContent= state.no+' 票 · '+np+'%';
+  els.yes.style.outline = state.my==='yes' ? '2px solid #ffe600' : 'none';
+  els.no.style.outline = state.my==='no' ? '2px solid #60a5fa' : 'none';
+  els.yes.textContent = state.my==='yes' ? '✓ 是，曾使用' : '是，曾使用';
+  els.no.textContent = state.my==='no' ? '✓ 否，尚未使用' : '否，尚未使用';
+}
+function vote(choice){
+  if(state.my===choice){
+    if(choice==='yes') state.yes=Math.max(0,state.yes-1);
+    else state.no=Math.max(0,state.no-1);
+    state.my='';
+  } else {
+    if(state.my==='yes') state.yes=Math.max(0,state.yes-1);
+    if(state.my==='no') state.no=Math.max(0,state.no-1);
+    if(choice==='yes') state.yes+=1; else state.no+=1;
+    state.my=choice;
+  }
+  save(state); render();
+}
+els.yes.addEventListener('click',()=>vote('yes'));
+els.no.addEventListener('click',()=>vote('no'));
+els.reset.addEventListener('click',()=>{
+  state={yes:0,no:0,my:'',seeded:false};
+  save(state); render();
+  els.hint.textContent='已重設，可開始引導投票';
+  setTimeout(()=> els.hint.textContent='採單機防重複投票機制（localStorage）', 1800);
+});
+render();
+</script>
+</body>
+</html>
