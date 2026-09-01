@@ -306,6 +306,146 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
+<!-- 09 Practice overview -->
+<section>
+  <div class="kicker">09 · 實作</div>
+  <h2>實作：個人學習診斷報告書</h2>
+  <div class="card">
+    <div style="font-size:.38em;font-weight:800;color:var(--yellow);letter-spacing:.06em">本階段僅聚焦個人層次診斷，不擴及校務成效評估</div>
+    <p style="font-size:.36em;color:#cbd5d8;margin:6px 0 0">以 115 學年度資料為基準，依「向度表現—亮點—卡點」三階架構，逐模組產出可直接交付家長與教師之診斷內容。採分步練習，逐張除錯，完成後再以整合公版一鍵產製全班。</p>
+    <div class="divider"></div>
+    <div class="grid3" style="gap:10px">
+      <div class="model" style="border-top:4px solid var(--yellow)"><b>模組一</b><p>學力現況與基準快照</p></div>
+      <div class="model" style="border-top:4px solid var(--mint)"><b>模組二</b><p>表現亮點・為孩子喝采</p></div>
+      <div class="model" style="border-top:4px solid #60a5fa"><b>模組三</b><p>待加強卡點・成長新起點</p></div>
+    </div>
+    <p style="font-size:.32em;color:var(--muted);margin:8px 0 0">鐵律：禁臆測動機、答錯≠迷思、單次不談成長、Zero Hallucination、每判斷皆須附證據。</p>
+  </div>
+</section>
+
+<!-- 10 Preparation -->
+<section>
+  <div class="kicker">10 · 實作前準備</div>
+  <h2>請先備齊 115 學年度六類資料</h2>
+  <div class="grid2" style="align-items:start">
+    <div class="card">
+      <div style="font-size:.38em;font-weight:800;color:#fff">必要檔案清單（皆為 115 年）</div>
+      <div style="display:grid;gap:7px;margin-top:10px">
+        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>1. 答對率</b><p>各向度題數與答對率（程式直算）。</p></div>
+        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>2. 班平均</b><p>班級常模，作為切點基準。</p></div>
+        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>3. 個人成績</b><p>學生層次成績檔。</p></div>
+        <div class="model" style="padding:9px 10px;border-left:4px solid #60a5fa"><b>4. 作答反應</b><p>逐題作答情形。</p></div>
+        <div class="model" style="padding:9px 10px;border-left:4px solid #60a5fa"><b>5. 答案</b><p>標準答案檔。</p></div>
+        <div class="model" style="padding:9px 10px;border-left:4px solid var(--mint)"><b>6. 題本</b><p>115 年題本內容。</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:.38em;font-weight:800;color:var(--mint)">備齊後方可進入分步練習</div>
+      <ul style="font-size:.36em;margin:8px 0 0 1.1em;line-height:1.8">
+        <li>請確認已完成去識別化，檔案不含可識別個資。</li>
+        <li>所有數值由程式計算，原始檔零修改。</li>
+        <li>本次實作以校平均為切點，不採用題數／答對率數值之直接報讀。</li>
+      </ul>
+      <div class="warn" style="margin-top:10px;padding:8px 10px"><div style="font-size:.32em;color:#ffd0d0"><b>提醒：</b>資料不齊全時應先補齊檔案，不得要求模型臆測。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 Module 1 -->
+<section>
+  <div class="kicker">11 · 分步練習 1/3</div>
+  <h2>只練【模組一】學力現況與基準快照</h2>
+  <div class="grid2">
+    <div class="card" style="padding:12px">
+      <div style="font-size:.34em;color:var(--yellow);font-weight:800">提示詞（僅執行模組一）</div>
+      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
+你是一位「個人學習診斷與教學處方專家」，任務只做【模組一】
+
+# 鐵律
+1.禁臆測動機 2.答錯≠迷思 3.單次不談成長 4.Zero Hallucination 5.每判斷附證據
+
+# 輸入
+- 學生代稱｜115學年度 5年級｜各向度 名稱/題數/答對率（程式直算）
+
+# 輸出（只做模組一）
+## 模組一：學力現況與基準快照
+- 僅呈現：向度｜怎麼做會更好 二欄
+- 句型：加強：…／精進：…（不加「低於/高於→」前綴）
+- 向度雷達：實線=該生／虛線=校平均
+
+# 開始
+請用 501-01 數據，只輸出模組一</code></pre>
+    </div>
+    <div class="card">
+      <div style="font-size:.38em;font-weight:800;color:#fff">現場除錯點</div>
+      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
+        <li>表格是否僅有 <code class="inline-code">向度｜怎麼做會更好</code> 二欄？</li>
+        <li>是否以校平均為切點，不直接報讀題數／答對率數值？</li>
+        <li>每列是否為具體做法，而非「低於校平均」等空泛敘述？</li>
+        <li>句型是否符合 <code class="inline-code">加強：每天挑5個易混字…</code>／<code class="inline-code">精進：挑戰複句分析…</code>？</li>
+        <li>雷達圖是否正確標示實線＝該生、虛線＝校平均？</li>
+      </ul>
+      <div class="divider"></div>
+      <p style="font-size:.32em;color:var(--muted)">請一次僅執行模組一，確認無誤後再進入下一模組。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 Module 2 -->
+<section>
+  <div class="kicker">12 · 分步練習 2/3</div>
+  <h2>只練【模組二】表現亮點</h2>
+  <div class="grid2">
+    <div class="card" style="padding:12px">
+      <div style="font-size:.34em;color:var(--mint);font-weight:800">提示詞（僅執行模組二，1–2 項）</div>
+      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
+你是一位「個人學習診斷與教學處方專家」，任務只做【模組二】
+
+# 輸出（只做模組二，1-2項）
+## 模組二：表現亮點・為孩子喝采
+- 核心能力｜肯定語1句（肯定思維歷程，不讚天賦）｜如何繼續精進（句型：精進：…）</code></pre>
+      <p style="font-size:.32em;color:var(--muted);margin-top:8px">範例意圖：肯定孩子的思考過程與策略運用，避免以天賦為由之讚美。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:.38em;font-weight:800;color:#fff">撰寫原則</div>
+      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
+        <li>擇 1–2 項已具相對優勢之核心能力。</li>
+        <li>肯定語須聚焦思維歷程，例如「能先辨識句型再作答」。</li>
+        <li>「如何繼續精進」須為可執行之學習行動。</li>
+      </ul>
+      <div class="warn" style="margin-top:10px;padding:8px 10px"><div style="font-size:.32em;color:#ffd0d0">不得出現「你很聰明」等天賦式讚美。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 Module 3 -->
+<section>
+  <div class="kicker">13 · 分步練習 3/3</div>
+  <h2>只練【模組三】待加強卡點</h2>
+  <div class="grid2">
+    <div class="card" style="padding:12px">
+      <div style="font-size:.34em;color:#60a5fa;font-weight:800">提示詞（僅執行模組三，1–2 項）</div>
+      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
+你是一位「個人學習診斷與教學處方專家」，任務只做【模組三】
+
+# 輸出（只做模組三，1-2項）
+## 模組三：待加強卡點・成長新起點
+- 優先卡點（先備性優先）｜可以怎麼做讓自己變得更好 2點｜查證提問1句
+- 句型：加強：每天挑5個易混字…（不加前綴）</code></pre>
+    </div>
+    <div class="card">
+      <div style="font-size:.38em;font-weight:800;color:#fff">撰寫原則</div>
+      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
+        <li>擇 1–2 項最具先備性之卡點優先處理。</li>
+        <li>「可以怎麼做」須提供 2 點具體可執行做法。</li>
+        <li>加列 1 句查證提問，以確認是否真正理解。</li>
+      </ul>
+      <div class="divider"></div>
+      <p style="font-size:.32em;color:var(--muted)">練完三張分步卡，再發《整合公版》即可一鍵產製全班報告書。</p>
+    </div>
+  </div>
+</section>
+
 </div>
 </div>
 
