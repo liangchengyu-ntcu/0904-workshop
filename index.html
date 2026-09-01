@@ -306,142 +306,107 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 09 Practice overview -->
+<!-- 09 Special project -->
 <section>
-  <div class="kicker">09 · 實作</div>
-  <h2>實作：個人學習診斷報告書</h2>
+  <div class="kicker">09 · 專題實作</div>
+  <h2>專題實作：個人學習診斷報告書</h2>
   <div class="card">
-    <div style="font-size:.38em;font-weight:800;color:var(--yellow);letter-spacing:.06em">本階段僅聚焦個人層次診斷，不擴及校務成效評估</div>
-    <p style="font-size:.36em;color:#cbd5d8;margin:6px 0 0">以 115 學年度資料為基準，依「向度表現—亮點—卡點」三階架構，逐模組產出可直接交付家長與教師之診斷內容。採分步練習，逐張除錯，完成後再以整合公版一鍵產製全班。</p>
-    <div class="divider"></div>
-    <div class="grid3" style="gap:10px">
+    <div style="font-size:.34em;color:var(--yellow);font-weight:800">一次改 4 個參數，貼上數據即產出全班五模組報告書</div>
+    <p style="font-size:.34em;color:#cbd5d8;margin:6px 0 0">整合公版已鎖定評量鐵律與輸出結構，現場先理解五模組定位，再以實際資料演練。</p>
+    <div class="grid3" style="gap:8px;margin-top:10px">
       <div class="model" style="border-top:4px solid var(--yellow)"><b>模組一</b><p>學力現況與基準快照</p></div>
       <div class="model" style="border-top:4px solid var(--mint)"><b>模組二</b><p>表現亮點・為孩子喝采</p></div>
-      <div class="model" style="border-top:4px solid #60a5fa"><b>模組三</b><p>待加強卡點・成長新起點</p></div>
+      <div class="model" style="border-top:4px solid #60a5fa"><b>模組三</b><p>待加強關鍵觀念</p></div>
     </div>
-    <p style="font-size:.32em;color:var(--muted);margin:8px 0 0">鐵律：禁臆測動機、答錯≠迷思、單次不談成長、Zero Hallucination、每判斷皆須附證據。</p>
+    <div class="grid2" style="gap:8px;margin-top:8px">
+      <div class="model" style="border-top:4px solid var(--coral)"><b>模組四</b><p>三步驟具體引導處方</p></div>
+      <div class="model" style="border-top:4px solid #a78bfa"><b>模組五</b><p>跨科觀察與親師晤談備忘錄</p></div>
+    </div>
+    <p style="font-size:.30em;color:var(--muted);margin:8px 0 0">鐵律：禁臆測動機／答錯≠迷思／單次不談成長／優異需同時達門檻與題數／每判斷附證據。</p>
   </div>
 </section>
 
-<!-- 10 Preparation -->
+<!-- 10 Integrated template usage -->
 <section>
-  <div class="kicker">10 · 實作前準備</div>
-  <h2>請先備齊 115 學年度六類資料</h2>
-  <div class="grid2" style="align-items:start">
+  <div class="kicker">10 · 整合公版使用方式</div>
+  <h2>回家只要改 4 個參數</h2>
+  <div class="grid2">
     <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:#fff">必要檔案清單（皆為 115 年）</div>
-      <div style="display:grid;gap:7px;margin-top:10px">
-        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>1. 答對率</b><p>各向度題數與答對率（程式直算）。</p></div>
-        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>2. 班平均</b><p>班級常模，作為切點基準。</p></div>
-        <div class="model" style="padding:9px 10px;border-left:4px solid var(--yellow)"><b>3. 個人成績</b><p>學生層次成績檔。</p></div>
-        <div class="model" style="padding:9px 10px;border-left:4px solid #60a5fa"><b>4. 作答反應</b><p>逐題作答情形。</p></div>
-        <div class="model" style="padding:9px 10px;border-left:4px solid #60a5fa"><b>5. 答案</b><p>標準答案檔。</p></div>
-        <div class="model" style="padding:9px 10px;border-left:4px solid var(--mint)"><b>6. 題本</b><p>115 年題本內容。</p></div>
+      <div style="font-size:.34em;color:var(--yellow);font-weight:800">可修改參數（檔案最上方）</div>
+      <pre style="font-size:.30em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code>editable:
+  class: "502"              # 班級
+  school_alias: "半導體國小" # 脫敏校名
+  year: "115"               # 學年度
+  threshold: 80             # 優異門檻%
+  min_items: 3              # 優異最少題數</code></pre>
+      <p style="font-size:.32em;color:var(--muted);margin-top:6px">其餘鐵律與結構請勿刪除；數字全由程式直算，原始檔零修改。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:.34em;font-weight:800;color:#fff">實作前備齊 115 年六類資料</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
+        <div class="model" style="padding:7px 9px"><b>答對率</b><p>各向度題數與答對率。</p></div>
+        <div class="model" style="padding:7px 9px"><b>班平均</b><p>班級常模。</p></div>
+        <div class="model" style="padding:7px 9px"><b>個人成績</b><p>學生層次成績。</p></div>
+        <div class="model" style="padding:7px 9px"><b>作答反應</b><p>逐題作答情形。</p></div>
+        <div class="model" style="padding:7px 9px"><b>答案</b><p>標準答案。</p></div>
+        <div class="model" style="padding:7px 9px"><b>題本</b><p>115 年題本。</p></div>
       </div>
-    </div>
-    <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:var(--mint)">備齊後方可進入分步練習</div>
-      <ul style="font-size:.36em;margin:8px 0 0 1.1em;line-height:1.8">
-        <li>請確認已完成去識別化，檔案不含可識別個資。</li>
-        <li>所有數值由程式計算，原始檔零修改。</li>
-        <li>本次實作以校平均為切點，不採用題數／答對率數值之直接報讀。</li>
-      </ul>
-      <div class="warn" style="margin-top:10px;padding:8px 10px"><div style="font-size:.32em;color:#ffd0d0"><b>提醒：</b>資料不齊全時應先補齊檔案，不得要求模型臆測。</div></div>
+      <p style="font-size:.30em;color:var(--muted);margin-top:8px">批次時依座號逐人輸出，校名脫敏為 <code class="inline-code">school_alias</code>，版型為單一 HTML，五模組連續，支援座號切換與列印。</p>
     </div>
   </div>
 </section>
 
-<!-- 11 Module 1 -->
+<!-- 11 Modules 1-2 -->
 <section>
-  <div class="kicker">11 · 分步練習 1/3</div>
-  <h2>只練【模組一】學力現況與基準快照</h2>
+  <div class="kicker">11 · 五模組說明 1/3</div>
+  <h2>模組一、二：先看見現況，再肯定優勢</h2>
   <div class="grid2">
-    <div class="card" style="padding:12px">
-      <div style="font-size:.34em;color:var(--yellow);font-weight:800">提示詞（僅執行模組一）</div>
-      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
-你是一位「個人學習診斷與教學處方專家」，任務只做【模組一】
-
-# 鐵律
-1.禁臆測動機 2.答錯≠迷思 3.單次不談成長 4.Zero Hallucination 5.每判斷附證據
-
-# 輸入
-- 學生代稱｜115學年度 5年級｜各向度 名稱/題數/答對率（程式直算）
-
-# 輸出（只做模組一）
-## 模組一：學力現況與基準快照
-- 僅呈現：向度｜怎麼做會更好 二欄
-- 句型：加強：…／精進：…（不加「低於/高於→」前綴）
-- 向度雷達：實線=該生／虛線=校平均
-
-# 開始
-請用 501-01 數據，只輸出模組一</code></pre>
+    <div class="card" style="border-top:4px solid var(--yellow)">
+      <div style="font-size:.38em;font-weight:800;color:var(--yellow)">模組一｜學力現況與基準快照</div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">呈現總體掌握度與班／校／縣常模差距，並以「向度｜題數｜答對率｜狀態」矩陣標示各向度為「優異／相對穩定／待加強支持」。僅向度同時達 <code class="inline-code">≥80% 且 ≥3 題</code> 才稱優異，否則不以最高分論定。</p>
+      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：協助教師與家長快速掌握該生整體位置與各向度差異。</p>
     </div>
-    <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:#fff">現場除錯點</div>
-      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
-        <li>表格是否僅有 <code class="inline-code">向度｜怎麼做會更好</code> 二欄？</li>
-        <li>是否以校平均為切點，不直接報讀題數／答對率數值？</li>
-        <li>每列是否為具體做法，而非「低於校平均」等空泛敘述？</li>
-        <li>句型是否符合 <code class="inline-code">加強：每天挑5個易混字…</code>／<code class="inline-code">精進：挑戰複句分析…</code>？</li>
-        <li>雷達圖是否正確標示實線＝該生、虛線＝校平均？</li>
-      </ul>
-      <div class="divider"></div>
-      <p style="font-size:.32em;color:var(--muted)">請一次僅執行模組一，確認無誤後再進入下一模組。</p>
+    <div class="card" style="border-top:4px solid var(--mint)">
+      <div style="font-size:.38em;font-weight:800;color:var(--mint)">模組二｜表現亮點・為孩子喝采（1–2 項）</div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">格式：<code class="inline-code">核心能力｜證據｜肯定語 1 句｜進階小挑戰 1 項</code>。肯定語須肯定思維歷程（例如能先辨識句型再作答），不讚天賦；挑戰須為可執行之延伸學習。</p>
+      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：先建立正向基礎，再談精進方向。</p>
     </div>
   </div>
 </section>
 
-<!-- 12 Module 2 -->
+<!-- 12 Modules 3-4 -->
 <section>
-  <div class="kicker">12 · 分步練習 2/3</div>
-  <h2>只練【模組二】表現亮點</h2>
+  <div class="kicker">12 · 五模組說明 2/3</div>
+  <h2>模組三、四：找出卡點並給出可執行處方</h2>
   <div class="grid2">
-    <div class="card" style="padding:12px">
-      <div style="font-size:.34em;color:var(--mint);font-weight:800">提示詞（僅執行模組二，1–2 項）</div>
-      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
-你是一位「個人學習診斷與教學處方專家」，任務只做【模組二】
-
-# 輸出（只做模組二，1-2項）
-## 模組二：表現亮點・為孩子喝采
-- 核心能力｜肯定語1句（肯定思維歷程，不讚天賦）｜如何繼續精進（句型：精進：…）</code></pre>
-      <p style="font-size:.32em;color:var(--muted);margin-top:8px">範例意圖：肯定孩子的思考過程與策略運用，避免以天賦為由之讚美。</p>
+    <div class="card" style="border-top:4px solid #60a5fa">
+      <div style="font-size:.38em;font-weight:800;color:#60a5fa">模組三｜待加強關鍵觀念・成長新起點（1–2 項）</div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">格式：<code class="inline-code">優先卡點｜觀察型態｜迷思假設＋查證提問｜短期目標與成功指標</code>。選 Y≠正解 Z 時，成因僅列為待提問確認之假設，不直接判定迷思；以先備性優先排序。</p>
+      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：聚焦最需優先補強的觀念，並提供可檢核的短期目標。</p>
     </div>
-    <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:#fff">撰寫原則</div>
-      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
-        <li>擇 1–2 項已具相對優勢之核心能力。</li>
-        <li>肯定語須聚焦思維歷程，例如「能先辨識句型再作答」。</li>
-        <li>「如何繼續精進」須為可執行之學習行動。</li>
-      </ul>
-      <div class="warn" style="margin-top:10px;padding:8px 10px"><div style="font-size:.32em;color:#ffd0d0">不得出現「你很聰明」等天賦式讚美。</div></div>
+    <div class="card" style="border-top:4px solid var(--coral)">
+      <div style="font-size:.38em;font-weight:800;color:var(--coral)">模組四｜三步驟具體引導處方</div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">1 確認卡點（照念問句）→ 2 鷹架（具象化操作）→ 3 檢核與分流（同型 2 題；若成功→下一步，若未掌握→退回先備）。</p>
+      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：提供教師可直接照做的引導語與檢核題組。</p>
     </div>
   </div>
 </section>
 
-<!-- 13 Module 3 -->
+<!-- 13 Module 5 + execution -->
 <section>
-  <div class="kicker">13 · 分步練習 3/3</div>
-  <h2>只練【模組三】待加強卡點</h2>
+  <div class="kicker">13 · 五模組說明 3/3</div>
+  <h2>模組五與一鍵產製</h2>
   <div class="grid2">
-    <div class="card" style="padding:12px">
-      <div style="font-size:.34em;color:#60a5fa;font-weight:800">提示詞（僅執行模組三，1–2 項）</div>
-      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code># 角色
-你是一位「個人學習診斷與教學處方專家」，任務只做【模組三】
-
-# 輸出（只做模組三，1-2項）
-## 模組三：待加強卡點・成長新起點
-- 優先卡點（先備性優先）｜可以怎麼做讓自己變得更好 2點｜查證提問1句
-- 句型：加強：每天挑5個易混字…（不加前綴）</code></pre>
+    <div class="card" style="border-top:4px solid #a78bfa">
+      <div style="font-size:.38em;font-weight:800;color:#a78bfa">模組五｜跨科觀察與親師晤談備忘錄</div>
+      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">含正向開場、跨科遷移觀察、家庭 3 點（①肯定 ②日常 ③檢核點，恰好 3 點）及親師共同目標（2–4 週）。</p>
+      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：作為親師溝通之備忘錄，語氣正向、具體、可執行。</p>
     </div>
     <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:#fff">撰寫原則</div>
-      <ul style="font-size:.34em;margin:8px 0 0 1.1em;line-height:1.7">
-        <li>擇 1–2 項最具先備性之卡點優先處理。</li>
-        <li>「可以怎麼做」須提供 2 點具體可執行做法。</li>
-        <li>加列 1 句查證提問，以確認是否真正理解。</li>
-      </ul>
-      <div class="divider"></div>
-      <p style="font-size:.32em;color:var(--muted)">練完三張分步卡，再發《整合公版》即可一鍵產製全班報告書。</p>
+      <div style="font-size:.38em;font-weight:800;color:#fff">複製貼上即可執行</div>
+      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code>請用上述公版，class="501" 直接輸出 501班 29人整合報告書
+請用上述公版，class="502" 直接輸出 502班 29人整合報告書</code></pre>
+      <p style="font-size:.32em;color:#cbd5d8;margin-top:6px">輸入：學生代稱｜學年度／年級／科目、總體答對率＋常模、各向度數據、作答明細（選填）、多科總成績（選填）。數字全由 openpyxl 直算，原始檔零修改。</p>
     </div>
   </div>
 </section>
