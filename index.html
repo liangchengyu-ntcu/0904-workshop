@@ -327,166 +327,27 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 10 Integrated template usage -->
+<!-- 10 Preparation -->
 <section>
-  <div class="kicker">10 · 整合公版使用方式</div>
-  <h2>回家只要改 4 個參數</h2>
-  <div class="grid2">
-    <div class="card">
-      <div style="font-size:.34em;color:var(--yellow);font-weight:800">可修改參數（檔案最上方）</div>
-      <pre style="font-size:.30em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code>editable:
-  class: "502"              # 班級
-  school_alias: "半導體國小" # 脫敏校名
-  year: "115"               # 學年度
-  threshold: 80             # 優異門檻%
-  min_items: 3              # 優異最少題數</code></pre>
-      <p style="font-size:.32em;color:var(--muted);margin-top:6px">其餘鐵律與結構請勿刪除；數字全由程式直算，原始檔零修改。</p>
+  <div class="kicker">10 · 實作前準備</div>
+  <h2>實作前請準備 115 年六類資料</h2>
+  <div class="card" style="padding:22px 24px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+      <div class="model" style="padding:12px;text-align:center"><b>答對率</b><p>各向度題數與答對率。</p></div>
+      <div class="model" style="padding:12px;text-align:center"><b>班平均</b><p>班級常模。</p></div>
+      <div class="model" style="padding:12px;text-align:center"><b>個人成績</b><p>學生層次成績。</p></div>
+      <div class="model" style="padding:12px;text-align:center"><b>作答反應</b><p>逐題作答情形。</p></div>
+      <div class="model" style="padding:12px;text-align:center"><b>答案</b><p>標準答案。</p></div>
+      <div class="model" style="padding:12px;text-align:center"><b>題本</b><p>115 年題本。</p></div>
     </div>
-    <div class="card">
-      <div style="font-size:.34em;font-weight:800;color:#fff">實作前備齊 115 年六類資料</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
-        <div class="model" style="padding:7px 9px"><b>答對率</b><p>各向度題數與答對率。</p></div>
-        <div class="model" style="padding:7px 9px"><b>班平均</b><p>班級常模。</p></div>
-        <div class="model" style="padding:7px 9px"><b>個人成績</b><p>學生層次成績。</p></div>
-        <div class="model" style="padding:7px 9px"><b>作答反應</b><p>逐題作答情形。</p></div>
-        <div class="model" style="padding:7px 9px"><b>答案</b><p>標準答案。</p></div>
-        <div class="model" style="padding:7px 9px"><b>題本</b><p>115 年題本。</p></div>
-      </div>
-      <div style="margin-top:10px;padding:14px 16px;background:rgba(255,230,0,.10);border:1px solid rgba(255,230,0,.45);border-radius:12px;text-align:center">
-        <div style="font-size:.44em;color:var(--yellow);font-weight:900;letter-spacing:.06em">★ 批次產製重點</div>
-        <div style="font-size:.40em;color:#fff;font-weight:800;margin-top:6px;line-height:1.6">批次時依座號逐人輸出，校名脫敏為 <code class="inline-code">school_alias</code>，版型為單一 HTML，五模組連續，支援座號切換與列印。</div>
-      </div>
+    <div style="margin-top:16px;padding:16px;background:rgba(255,230,0,.10);border:1px solid rgba(255,230,0,.45);border-radius:12px;text-align:center">
+      <div style="font-size:.48em;color:var(--yellow);font-weight:900;letter-spacing:.06em">★ 批次產製重點</div>
+      <div style="font-size:.42em;color:#fff;font-weight:800;margin-top:8px;line-height:1.6">批次時依座號逐人輸出，校名脫敏為 <code class="inline-code">school_alias</code>，版型為單一 HTML，五模組連續，支援座號切換與列印。</div>
     </div>
   </div>
 </section>
 
-<!-- 11 Modules 1-2 -->
-<section>
-  <div class="kicker">11 · 五模組說明 1/3</div>
-  <h2>模組一、二：先看見現況，再肯定優勢</h2>
-  <div class="grid2">
-    <div class="card" style="border-top:4px solid var(--yellow)">
-      <div style="font-size:.38em;font-weight:800;color:var(--yellow)">模組一｜學力現況與基準快照</div>
-      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">呈現總體掌握度與班／校／縣常模差距，並以「向度｜題數｜答對率｜狀態」矩陣標示各向度為「優異／相對穩定／待加強支持」。僅向度同時達 <code class="inline-code">≥80% 且 ≥3 題</code> 才稱優異，否則不以最高分論定。</p>
-      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：協助教師與家長快速掌握該生整體位置與各向度差異。</p>
-    </div>
-    <div class="card" style="border-top:4px solid var(--mint)">
-      <div style="font-size:.38em;font-weight:800;color:var(--mint)">模組二｜表現亮點・為孩子喝采（1–2 項）</div>
-      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">格式：<code class="inline-code">核心能力｜證據｜肯定語 1 句｜進階小挑戰 1 項</code>。肯定語須肯定思維歷程（例如能先辨識句型再作答），不讚天賦；挑戰須為可執行之延伸學習。</p>
-      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：先建立正向基礎，再談精進方向。</p>
-    </div>
-  </div>
-</section>
 
-<!-- 12 Modules 3-4 -->
-<section>
-  <div class="kicker">12 · 五模組說明 2/3</div>
-  <h2>模組三、四：找出卡點並給出可執行處方</h2>
-  <div class="grid2">
-    <div class="card" style="border-top:4px solid #60a5fa">
-      <div style="font-size:.38em;font-weight:800;color:#60a5fa">模組三｜待加強關鍵觀念・成長新起點（1–2 項）</div>
-      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">格式：<code class="inline-code">優先卡點｜觀察型態｜迷思假設＋查證提問｜短期目標與成功指標</code>。選 Y≠正解 Z 時，成因僅列為待提問確認之假設，不直接判定迷思；以先備性優先排序。</p>
-      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：聚焦最需優先補強的觀念，並提供可檢核的短期目標。</p>
-    </div>
-    <div class="card" style="border-top:4px solid var(--coral)">
-      <div style="font-size:.38em;font-weight:800;color:var(--coral)">模組四｜三步驟具體引導處方</div>
-      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">1 確認卡點（照念問句）→ 2 鷹架（具象化操作）→ 3 檢核與分流（同型 2 題；若成功→下一步，若未掌握→退回先備）。</p>
-      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：提供教師可直接照做的引導語與檢核題組。</p>
-    </div>
-  </div>
-</section>
-
-<!-- 13 Module 5 + execution -->
-<section>
-  <div class="kicker">13 · 五模組說明 3/3</div>
-  <h2>模組五與一鍵產製</h2>
-  <div class="grid2">
-    <div class="card" style="border-top:4px solid #a78bfa">
-      <div style="font-size:.38em;font-weight:800;color:#a78bfa">模組五｜跨科觀察與親師晤談備忘錄</div>
-      <p style="font-size:.32em;color:#cbd5d8;margin:6px 0 0">含正向開場、跨科遷移觀察、家庭 3 點（①肯定 ②日常 ③檢核點，恰好 3 點）及親師共同目標（2–4 週）。</p>
-      <p style="font-size:.30em;color:var(--muted);margin-top:6px">簡要說明：作為親師溝通之備忘錄，語氣正向、具體、可執行。</p>
-    </div>
-    <div class="card">
-      <div style="font-size:.38em;font-weight:800;color:#fff">複製貼上即可執行</div>
-      <pre style="font-size:.28em;line-height:1.6;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;white-space:pre-wrap;color:#d4d4d8"><code>請用上述公版，class="501" 直接輸出 501班 29人整合報告書
-請用上述公版，class="502" 直接輸出 502班 29人整合報告書</code></pre>
-      <p style="font-size:.32em;color:#cbd5d8;margin-top:6px">輸入：學生代稱｜學年度／年級／科目、總體答對率＋常模、各向度數據、作答明細（選填）、多科總成績（選填）。數字全由 openpyxl 直算，原始檔零修改。</p>
-    </div>
-  </div>
-</section>
-
-<!-- 14 Full prompt copy -->
-<section>
-  <div class="kicker">14 · 提示詞全文</div>
-  <h2>整合公版 — 複製即可貼上使用</h2>
-  <div class="card" style="padding:12px">
-    <div style="display:flex;align-items:center;gap:8px">
-      <div style="font-size:.34em;color:var(--yellow);font-weight:800">完整提示詞（點右側按鈕一鍵複製）</div>
-      <button class="btn btn-ghost" id="copyPromptBtn" style="margin-left:auto;font-size:.32em;padding:6px 10px">一鍵複製</button>
-      <span id="copyPromptHint" style="font-size:.30em;color:var(--muted)"></span>
-    </div>
-    <pre style="font-size:.26em;line-height:1.55;background:#0f0f10;border:1px solid #2a2a2e;border-radius:10px;padding:10px;max-height:420px;overflow:auto;white-space:pre-wrap;color:#d4d4d8;margin-top:8px"><code id="fullPromptText">---
-editable:
-  class: "502"                    # 班級：501 / 502 / 503 ...
-  school_alias: "半導體國小"       # 脫敏校名
-  year: "115"                     # 學年度
-  threshold: 80                   # 優異門檻%（可改）
-  min_items: 3                    # 優異最少題數（可改）
----
-
-# 角色與任務定義
-你是一位具備教育評量學與認知心理學專業的「個人學習診斷與教學處方專家」。
-你的任務是依據使用者提供的「單一學生評量數據（向度分數、題目作答明細、班級/常模基準）」，產出一份客觀、具備明確證據鏈、不貼標籤、且具備具體教學行動方針的【個人學習診斷報告書】。
-
-## 🛑 絕對禁止與嚴格評量鐵律（Guardrails）
-1. 嚴禁主觀臆測心態：禁用 粗心/不認真等詞，只述作答現象與認知歷程
-2. 嚴禁隨意使用「精熟」：「最高分」≠「優異」。僅向度≥80%且題數≥3才稱「優異」，否則稱「相對穩定」或「待加強支持」
-3. 「答錯」≠證實迷思：無官方誘答分析時，僅述「選Y≠正解Z」，成因列為「待提問確認之假設」
-4. 單次嚴禁縱向成長：無可比量尺，禁「進步/退步」
-5. 數據精確性：所有%/題數/差距與輸入100%一致，嚴禁捏造
-6. 每判斷必附證據：標註 向度%/題數/題號
-
-## 📋 診斷報告標準輸出結構（五模組連續，繁中）
-
-### 模組一：學力現況與基準快照
-- **整體掌握度**：總體% vs 班/校/縣常模差距
-- **向度表現矩陣**：向度｜題數｜答對率｜狀態（優異/相對穩定/待加強支持）
-
-### 模組二：表現亮點・為孩子喝采（1-2項）
-- 核心能力｜證據｜肯定語1句｜進階小挑戰1項
-
-### 模組三：待加強關鍵觀念・成長新起點（1-2項）
-- 優先卡點｜觀察型態｜迷思假設＋查證提問｜短期目標與成功指標
-
-### 模組四：三步驟具體引導處方
-1. 確認卡點（照唸問句） 2. 鷹架（具象化操作） 3. 檢核與分流（同型2題；若成功→下一步；若未掌握→退回先備）
-
-### 模組五：跨科觀察與親師晤談備忘錄
-- 正向開場｜跨科遷移｜家庭3點（①肯定②日常③檢核點，恰好3點）｜親師共同目標（2-4週）
-
-## 📥 請使用者提供以下資訊開始診斷
-1. 學生代稱｜學年度/年級/科目
-2. 總體答對率＋班/校/縣常模
-3. 各向度 名稱/題數/答對率
-4. 題目作答明細（選填）
-5. 多科總成績（選填）
-
-## 執行要求
-- 數字全由程式直算（openpyxl），原始檔零修改
-- 批次時：依座號將502逐人輸出，座號篩選，校名脫敏為半導體國小
-- 版型：單一HTML，五模組連續，頂部座號切換，列印友善
-
-# 開始
-我已附上 502班數據，請直接輸出五模組整合報告書。
-
----
-複製後範例：
-請用上述公版，class="501" 直接輸出 501班 29人整合報告書
-請用上述公版，class="502" 直接輸出 502班 29人整合報告書</code></pre>
-    <p style="font-size:.30em;color:var(--muted);margin-top:6px">現場直接全選複製貼至 OpenCode 對話框，回家僅需修改最上方 4 個參數即可套用至其他班級。</p>
-    <p style="font-size:.30em;color:var(--muted);margin-top:4px">完整提示詞同步收錄於 <a href="https://github.com/liangchengyu-ntcu/SAAA-prompts/blob/main/講義_整合公版.md" target="_blank" rel="noreferrer">SAAA-prompts / 講義_整合公版.md</a> · 分步版見 <a href="https://github.com/liangchengyu-ntcu/SAAA-prompts/blob/main/講義_分步練習包.md" target="_blank" rel="noreferrer">分步練習包</a></p>
-  </div>
-</section>
 
 </div>
 </div>
