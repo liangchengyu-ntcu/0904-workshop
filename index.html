@@ -29,6 +29,7 @@
 .badge.dark{background:#1f1f22;color:#ffe600;border:1px solid #2d2d30}
 .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));border:1px solid var(--line);border-radius:18px;padding:18px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.grid2 > *{min-width:0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:860px){ .grid2{grid-template-columns:1fr} .grid3{grid-template-columns:1fr} .reveal h1{font-size:1.15em} }
 .kicker{color:var(--yellow);font-size:.42em;letter-spacing:.14em;font-weight:800}
@@ -47,7 +48,7 @@
 .vote-center{text-align:center}
 .vote-center .kicker, .vote-center h2{ text-align:center }
 @media(max-width:860px){.vote-wrap{grid-template-columns:1fr}}
-.bar-row{display:grid;grid-template-columns:54px 1fr 78px;gap:10px;align-items:center;margin:10px 0}
+.bar-row{display:grid;grid-template-columns:70px 1fr 78px;gap:10px;align-items:center;margin:10px 0}
 .bar-label{font-size:.42em;font-weight:800;letter-spacing:.06em;color:#fff;display:flex;align-items:center;gap:8px}
 .dot{width:9px;height:9px;border-radius:50%}
 .dot-yes{background:var(--yellow)}
@@ -64,6 +65,7 @@
 .warn{border:1px solid rgba(255,77,77,.55);background:rgba(255,77,77,.08);border-radius:14px;padding:12px 14px}
 .warn strong{color:#ff8a8a}
 .model{padding:12px 12px;border-radius:14px;background:#151518;border:1px solid #26262a}
+.card,.model{min-width:0;overflow-wrap:anywhere}
 .model b{font-size:.48em;color:#fff}
 .model p{font-size:.38em;color:#cbd5d8;margin:.25em 0 0}
 .model.cn{border-left:4px solid var(--coral); background:linear-gradient(180deg, rgba(255,77,77,.08), rgba(255,255,255,.01))}
@@ -81,6 +83,58 @@ small a{color:#ffe600}
 code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 .inline-code{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:.15em .4em;font-size:.9em}
 .icon{font-size:.95em}
+.cover-topic{font-size:.82em;font-weight:900;color:var(--yellow);letter-spacing:.04em;margin:.1em 0}
+.question-list{margin:.35em auto 0;max-width:760px;padding-left:1.5em}
+.question-list li{font-size:.62em;line-height:1.85;padding-left:.3em}
+.analysis-map{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;max-width:820px;margin:10px auto 0;text-align:center}
+.map-node{background:#151518;border:1px solid #303036;border-radius:14px;padding:7px 18px;font-size:.42em;font-weight:800;color:#fff}
+.map-node.main{grid-column:1 / -1;border-left:4px solid var(--yellow)}
+.map-node.branch{border-left:4px solid #60a5fa}
+.map-node.branch.person{border-left-color:var(--mint)}
+.map-arrow{grid-column:1 / -1;color:var(--yellow);font-size:.5em;line-height:1}
+.map-branch-label{font-size:.34em;color:#d7d7db;font-weight:800;line-height:1.2}
+.map-merge{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:24px;color:var(--yellow);font-size:.5em;line-height:1}
+.map-merge span:first-child{text-align:right;padding-right:24%}
+.map-merge span:last-child{text-align:left;padding-left:24%}
+.static-poll{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;max-width:900px;margin:42px auto 26px}
+.static-choice{min-height:190px;border-radius:24px;border:1px solid #35353a;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));display:flex;flex-direction:column;align-items:center;justify-content:center}
+.static-choice strong{font-size:1.05em;color:#fff}
+.static-choice span{font-size:.36em;color:var(--muted);margin-top:8px}
+.static-choice.yes{border-color:rgba(255,230,0,.75);box-shadow:inset 0 0 0 1px rgba(255,230,0,.15)}
+.static-choice.yes strong{color:var(--yellow)}
+.static-choice.no{border-color:rgba(96,165,250,.65)}
+.static-question{font-size:1.15em;color:#666;font-weight:900}
+.data-table{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:10px}
+.data-table th{font-size:.32em;color:var(--muted);text-align:left;padding:0 14px 4px}
+.data-table td{font-size:.4em;color:#f1f1f2;background:#151518;border-top:1px solid #29292d;border-bottom:1px solid #29292d;padding:9px 14px}
+.data-table td:first-child{width:34%;font-weight:800;color:var(--yellow);border-left:4px solid var(--yellow);border-radius:12px 0 0 12px}
+.data-table td:last-child{border-right:1px solid #29292d;border-radius:0 12px 12px 0}
+.takeaway{border-left:4px solid var(--yellow);background:rgba(255,230,0,.07);border-radius:0 14px 14px 0;padding:11px 15px;font-size:.36em;color:#fff;line-height:1.6}
+.chapter-center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:620px;text-align:center}
+.chapter-center h1{font-size:1.65em;margin:.1em 0;color:#fff}
+.chapter-center .chapter-sub{font-size:.48em;color:var(--yellow);letter-spacing:.14em;font-weight:800}
+.prompt-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:14px;align-items:start}
+.prompt-card{background:#111113;border:1px solid #34343a;border-left:4px solid var(--yellow);border-radius:14px;overflow:hidden;min-width:0}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;background:#19191c;border-bottom:1px solid #2a2a2e}
+.prompt-head strong{font-size:.34em;color:#fff;letter-spacing:.04em}
+.copy-prompt{appearance:none;border:1px solid rgba(255,230,0,.6);background:var(--yellow);color:#111;border-radius:9px;padding:7px 11px;font-size:.3em;font-weight:900;cursor:pointer;white-space:nowrap}
+.copy-prompt:hover{filter:brightness(1.06)}
+.copy-prompt:active{transform:scale(.98)}
+.prompt-text{margin:0;padding:13px 15px;white-space:pre-wrap;overflow-wrap:anywhere;font:600 .31em/1.62 ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans TC",monospace;color:#f4f4f5;background:transparent;max-height:350px;overflow-y:auto}
+.side-note{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:14px}
+.side-note h3{font-size:.4em;margin:0 0 7px;color:var(--yellow)}
+.side-note ul{margin:0 0 0 1.05em;padding:0}
+.side-note li{font-size:.35em;line-height:1.65;margin:.18em 0}
+.side-note p{font-size:.34em;line-height:1.6;margin:.2em 0;color:#d7d7db}
+.skill-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
+.skill-flow{display:grid;grid-template-columns:1fr;gap:3px;max-width:600px}
+.skill-step{border:1px solid #303036;border-left:4px solid var(--yellow);background:#151518;border-radius:10px;padding:5px 12px;text-align:center;font-size:.33em;font-weight:800;color:#fff}
+.skill-arrow{color:var(--yellow);text-align:center;font-size:.36em;line-height:1}
+.stage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+.stage-grid div{border:1px solid #303036;border-radius:12px;background:#151518;padding:10px;text-align:center;font-size:.34em;font-weight:800;color:#fff}
+.stage-grid div::before{content:"✓";display:block;color:var(--mint);font-size:1.15em;margin-bottom:4px}
+.focus-question{margin-top:10px;border:1px solid rgba(96,165,250,.5);background:rgba(96,165,250,.08);border-radius:13px;padding:9px 12px;text-align:center;font-size:.35em;color:#eaf2ff}
+.prompt-stack{display:grid;gap:10px}
 </style>
 </head>
 <body>
@@ -91,57 +145,68 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 <section style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:620px;text-align:center">
   <div class="badge">新竹縣115學年度 · 中小學教務主任會議</div>
   <div style="height:14px"></div>
-  <div class="kicker">新竹縣115學年度中小學教務主任會議</div>
-  <h1 class="hero-title" style="margin:.25em 0 .2em">助教研習課<br><span>AI 可以怎麼幫你分析</span><br>學力檢測資料</h1>
-  <p class="sub" style="max-width:26em;margin:0 auto">將 <span class="hl">OpenCode</span> 作為專屬資料分析助理，透過資料視覺化系統性發掘學生學習盲點。</p>
+  <h1 class="hero-title" style="margin:.2em 0 .08em">助教研習課</h1>
+  <div class="cover-topic">從學力資料到教學行動</div>
+  <p class="sub" style="margin:.1em auto .65em">AI 學習輪廓、診斷與成效解讀實作</p>
+  <div class="divider" style="width:520px;max-width:70%;margin:0 0 12px"></div>
+  <p style="font-size:.38em;line-height:1.65;margin:0;color:#d7d7db"><span class="hl">OpenCode × learning-profile-diagnostics</span></p>
 </section>
 
-<!-- 2 Poll -->
-<section class="vote-center">
-  <div class="kicker">02 · 現場調查</div>
-  <h2 style="text-align:center">是否曾使用 <span class="hl">Codex / Claude Code / Antigravity</span> 等 AI 編碼代理？</h2>
-  <div class="vote-wrap centered" style="text-align:left">
-    <div class="card">
-      <p style="margin:0 0 8px;font-size:.40em;color:#cbd5d8;text-align:center">請點選下列選項，系統將即時呈現統計結果。每部裝置限投一次，投後可變更選擇。</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 6px">
-        <button class="btn btn-yes" id="voteYes">是，曾使用</button>
-        <button class="btn btn-no" id="voteNo">否，尚未使用</button>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;justify-content:center">
-        <button class="btn btn-ghost" id="resetBtn" style="font-size:.36em;padding:8px 10px">重設示範數據</button>
-        <span style="font-size:.34em;color:var(--muted);align-self:center" id="voteHint">採單機防重複投票機制（localStorage）</span>
-      </div>
-      <div class="divider"></div>
-      <div class="stat">
-        <div><b id="totalVotes">0</b><br><span>總投票數</span></div>
-        <div><b id="yesPct">0%</b><br><span>是</span></div>
-        <div><b id="noPct">0%</b><br><span>否</span></div>
-      </div>
-      <p style="font-size:.32em;color:var(--muted);margin:8px 0 0;text-align:center">建議主持人先執行「重設示範數據」，再引導與會者同步投票，以利掌握現場情形。</p>
-    </div>
-    <div class="card">
-      <div style="font-size:.38em;letter-spacing:.08em;font-weight:800;color:#fff;margin-bottom:6px;text-align:center">即時統計圖表</div>
-      <div class="bar-row">
-        <div class="bar-label"><span class="dot dot-yes"></span> 是</div>
-        <div class="bar-track"><div class="bar-fill fill-yes" id="barYes"></div></div>
-        <div class="bar-val" id="valYes">0 票 · 0%</div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span class="dot dot-no"></span> 否</div>
-        <div class="bar-track"><div class="bar-fill fill-no" id="barNo"></div></div>
-        <div class="bar-val" id="valNo">0 票 · 0%</div>
-      </div>
-      <div class="divider"></div>
-      <p style="font-size:.32em;color:var(--muted);margin:0;text-align:center">本頁為單機示範模式，投票紀錄儲存於本機瀏覽器，重新載入後仍予保留。</p>
-    </div>
+<!-- 2 Questions -->
+<section>
+  <div class="kicker">02 · 今天要解決的問題</div>
+  <h2>學力資料不只是成績表</h2>
+  <div class="card" style="padding:22px 34px;max-width:900px;margin:18px auto 0">
+    <p style="font-size:.45em;color:#cbd5d8;margin:0">我們今天想要了解：</p>
+    <ol class="question-list">
+      <li>年級發生什麼？</li>
+      <li>班級最需要先處理什麼？</li>
+      <li>哪一道題值得看？</li>
+      <li>哪一位學生需要下探？</li>
+      <li>下一步可以怎麼教？</li>
+    </ol>
   </div>
 </section>
 
-<!-- 3 Origin -->
+<!-- 3 Static Poll -->
+<section class="vote-center">
+  <div class="kicker">03 · 現場調查</div>
+  <h2 style="text-align:center;font-size:.88em;line-height:1.35;margin:.12em auto .2em">你曾經用 AI 分析過 <span class="hl">Excel 或學力檢測資料</span>嗎？</h2>
+  <div class="static-poll" aria-label="靜態現場調查選項">
+    <div class="static-choice yes"><strong>有？</strong><span>請舉手</span></div>
+    <div class="static-question">／</div>
+    <div class="static-choice no"><strong>沒有？</strong><span>也請舉手</span></div>
+  </div>
+  <p style="font-size:.4em;color:#fff;margin:12px auto 0;max-width:900px">今天的重點不是讓 AI 幫我們寫一段話，而是讓 AI 沿著資料證據協助判斷。</p>
+</section>
+
+<!-- 4 Analysis Map -->
+<section style="padding-top:4px">
+  <div class="kicker">04 · 今天的分析地圖</div>
+  <h2 style="margin:.15em 0 .05em">從 SAAA 學力資料一路走到教學行動</h2>
+  <div class="analysis-map" aria-label="SAAA 學力資料分析流程">
+    <div class="map-node main">SAAA 學力資料</div>
+    <div class="map-arrow">↓</div>
+    <div class="map-node main">年級：發生什麼？</div>
+    <div class="map-arrow">↓</div>
+    <div class="map-node main">班級：最需要處理什麼？</div>
+    <div class="map-merge"><span>↙</span><span>↘</span></div>
+    <div class="map-branch-label">看題</div>
+    <div class="map-branch-label">看人</div>
+    <div class="map-node branch">題目診斷</div>
+    <div class="map-node branch person">個人輪廓</div>
+    <div class="map-merge"><span>↘</span><span>↙</span></div>
+    <div class="map-node main">教學行動</div>
+    <div class="map-arrow">↓</div>
+    <div class="map-node main">成效解讀</div>
+  </div>
+</section>
+
+<!-- 5 Origin -->
 <section>
   <div class="grid2">
     <div>
-      <div class="kicker">03 · Opencode 簡介</div>
+      <div class="kicker">05 · Opencode 簡介</div>
       <h2 style="margin:.2em 0 .2em">OpenCode 是什麼？</h2>
       <p style="font-size:.42em;color:var(--yellow);font-weight:800;margin:0 0 8px;letter-spacing:.06em">開源 AI 編碼代理 · 美國製作</p>
       <div class="card">
@@ -176,10 +241,10 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 4 Clip -->
+<!-- 6 Clip -->
 <section style="padding-top:6px">
-  <div class="kicker">04 · 現場剪報</div>
-  <h2 style="margin:.12em 0 .06em;font-size:1.02em">OpenCode 並非小眾工具：臺灣教育現場已有教師投入實務應用</h2>
+  <div class="kicker">06 · 現場剪報</div>
+  <h2 style="margin:.12em 0 .06em;font-size:.82em">OpenCode 並非小眾工具：臺灣教育現場已有教師投入實務應用</h2>
   <p style="font-size:.32em;color:var(--muted);margin:0 0 8px">客觀呈現社群應用現況，作為導入評估之參考依據</p>
   <div class="grid2" style="gap:12px;align-items:start">
     <div class="img-frame" style="max-height:508px;display:flex;flex-direction:column"><img src="04-clip-sanshibaba.png" alt="三師爸 OpenCode 基本功 EP07 剪報" style="object-fit:contain;flex:1;min-height:0" loading="lazy" /><div class="caption">圖：公開影音平台教學系列「OpenCode 基本功 EP07」截圖 · 僅作為社群應用現況之客觀呈現</div></div>
@@ -196,9 +261,9 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 5 Models -->
+<!-- 7 Models -->
 <section style="padding-top:6px">
-  <div class="kicker">05 · 模型與資料蒐集警示</div>
+  <div class="kicker">07 · 模型與資料蒐集警示</div>
   <h2 style="margin:.12em 0 .06em;font-size:1.02em">OpenCode 提供哪些模型？</h2>
   <p style="font-size:.36em;color:#cbd5d8;margin:0 0 8px">聚焦 6 款限時免費模型 · <span style="color:var(--coral);font-weight:800">中國製 2 款</span> · <span style="color:var(--mint);font-weight:800">美國製 3 款</span> · <span style="color:var(--yellow);font-weight:800">來源未公開 1 款</span></p>
   <div class="grid2" style="gap:12px;align-items:start">
@@ -228,9 +293,9 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 6 Install 1 -->
+<!-- 8 Install 1 -->
 <section>
-  <div class="kicker">06 · 安裝教學 1/2</div>
+  <div class="kicker">08 · 安裝教學 1/2</div>
   <h2>步驟一：開啟官方網站，進入下載頁面</h2>
   <div class="grid2">
     <div class="img-frame"><img src="01-home.png" alt="OpenCode 官網首頁" loading="lazy" /><div class="caption">圖 1：<code class="inline-code">https://opencode.ai/zh</code> → 點選右上角「下載」</div></div>
@@ -249,9 +314,9 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 7 Install 2 -->
+<!-- 9 Install 2 -->
 <section>
-  <div class="kicker">07 · 安裝教學 2/2</div>
+  <div class="kicker">09 · 安裝教學 2/2</div>
   <h2>步驟二：下載並安裝 Windows 版本</h2>
   <div class="grid2">
     <div class="img-frame"><img src="02-download-hero.png" alt="下載 Windows 版按鈕" loading="lazy" /><div class="caption">圖 2：點選「↓ 下載 Windows 版」→ 取得 NSIS 安裝檔（約 126 MB）</div></div>
@@ -274,9 +339,9 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 8 Deident -->
+<!-- 10 Deident -->
 <section style="padding-top:6px">
-  <div class="kicker">08 · 資料去識別化</div>
+  <div class="kicker">10 · 資料去識別化</div>
   <h2 style="margin:.12em 0 .06em;font-size:1.02em">資料去識別化 — 分析前之必要程序</h2>
   <p style="font-size:.32em;color:var(--muted);margin:0 0 8px">工具：<a href="https://liangchengyu-ntcu.github.io/SAAA-Deidentification-Tool/" target="_blank" rel="noreferrer">SAAA 學生學習能力檢測去識別化工具 v2.0</a> · <span style="color:#34d399;font-weight:800">100% 本地端運算 · 零個資上傳</span> · 依現行個人資料保護規範辦理</p>
   <div class="grid2" style="gap:12px;align-items:start">
@@ -306,48 +371,208 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
   </div>
 </section>
 
-<!-- 09 Title -->
-<section data-state="centered">
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:620px;text-align:center">
-    <div class="kicker">09 · 專題實作</div>
-    <h1 class="hero-title" style="margin:.2em 0">專題實作</h1>
-  </div>
+<!-- 11 Data Map -->
+<section style="padding-top:4px">
+  <div class="kicker">11 · 今天使用的資料</div>
+  <h2 style="margin:.12em 0 .04em">今天使用哪些 SAAA 學力資料？</h2>
+  <p style="font-size:.34em;color:var(--yellow);font-weight:800;margin:0">一份資料，只能回答一種問題</p>
+  <table class="data-table" aria-label="SAAA 資料類型與可回答問題">
+    <thead><tr><th>資料類型</th><th>可以回答的問題</th></tr></thead>
+    <tbody>
+      <tr><td>個人成績</td><td>哪些學生值得進一步下探？</td></tr>
+      <tr><td>班平均</td><td>哪些班級和年級整體不同？</td></tr>
+      <tr><td>作答反應 0 / 1</td><td>哪些題目是共同失分？</td></tr>
+      <tr><td>原始選項 A / B / C / D</td><td>錯誤反應集中在哪個選項？</td></tr>
+      <tr><td>能力向度</td><td>問題是全面低落，還是集中在某一類能力？</td></tr>
+    </tbody>
+  </table>
+  <div class="takeaway" style="margin-top:8px"><b>資料不是越多越好，而是每一份資料回答不同問題。</b><br>如果只有成績，只能看高低；有作答反應，才開始能看「錯在哪」；有選項與能力向度，才比較能提出具體教學處理。</div>
 </section>
 
-<!-- 10 Preparation -->
-<section>
-  <div class="kicker">10 · 實作前準備</div>
-  <h2>實作前準備</h2>
-  <div class="card" style="padding:22px 24px">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-      <div class="model" style="padding:12px;text-align:center"><b>答對率</b></div>
-      <div class="model" style="padding:12px;text-align:center"><b>班平均</b></div>
-      <div class="model" style="padding:12px;text-align:center"><b>個人成績</b></div>
-      <div class="model" style="padding:12px;text-align:center"><b>作答反應</b></div>
-      <div class="model" style="padding:12px;text-align:center"><b>答案</b></div>
-      <div class="model" style="padding:12px;text-align:center"><b>等級資料</b><p>僅 5、7 年級</p></div>
+<!-- 12 Skill -->
+<section style="padding-top:4px">
+  <div class="kicker">12 · Skill 在做什麼</div>
+  <h2 style="margin:.12em 0 .08em;font-size:.82em"><span class="hl">learning-profile-diagnostics</span> 做的不是「畫圖」，而是封裝分析流程</h2>
+  <div class="skill-layout">
+    <div class="skill-flow" aria-label="learning-profile-diagnostics 分析流程">
+      <div class="skill-step">SAAA 去識別化資料</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">資料品質檢查</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">年級分析</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">班級診斷</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">題目診斷</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">教學分組</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">個人學習輪廓</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">教學行動建議</div><div class="skill-arrow">↓</div>
+      <div class="skill-step">Dashboard</div>
+    </div>
+    <div>
+      <div class="takeaway"><b>Skill</b> = 把固定的分析邏輯、判讀規則、教學行動格式包起來。</div>
+      <div class="side-note" style="margin-top:14px">
+        <h3>老師要學的是追問路徑</h3>
+        <p>不是每一個統計方法，而是沿著 Dashboard 持續追問：</p>
+        <ul>
+          <li>發生什麼？</li>
+          <li>證據在哪？</li>
+          <li>下一步怎麼教？</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 11 Modules -->
-<section>
-  <div class="kicker">11 · 專題實作</div>
-  <h2>專題實作：個人學習診斷報告書</h2>
-  <div class="card" style="padding:28px 32px">
-    <div style="font-size:.78em;color:var(--yellow);font-weight:900;letter-spacing:.06em">本日實作模組</div>
-    <ul style="font-size:.72em;margin:18px 0 0 1.1em;line-height:2.1;color:#fff">
-      <li><b style="color:#ffe600">模組一</b>　學力現況與基準快照</li>
-      <li><b style="color:#34d399">模組二</b>　表現亮點・為孩子喝采</li>
-      <li><b style="color:#60a5fa">模組三</b>　待加強關鍵觀念</li>
-      <li><b style="color:#ff8a8a">模組四</b>　三步驟具體引導處方</li>
-      <li><b style="color:#a78bfa">模組五</b>　跨科觀察與親師晤談備忘錄</li>
-    </ul>
-    <p style="font-size:.42em;color:var(--muted);margin-top:14px">提示詞 Repo：<a href="https://github.com/liangchengyu-ntcu/SAAA-prompts" target="_blank" rel="noreferrer">github.com/liangchengyu-ntcu/SAAA-prompts</a></p>
+<!-- 13 Demo -->
+<section data-state="centered">
+  <div class="chapter-center">
+    <div class="chapter-sub">DEMO</div>
+    <h1>這些資料可以做什麼</h1>
   </div>
 </section>
 
+<!-- 14 Practice -->
+<section data-state="centered">
+  <div class="chapter-center">
+    <div class="chapter-sub">HANDS-ON</div>
+    <h1>換你實作</h1>
+  </div>
+</section>
 
+<!-- 15 Inspect Data -->
+<section style="padding-top:4px">
+  <div class="kicker">15 · 先認識今天的資料</div>
+  <h2 style="margin:.12em 0 .12em">第一步：這包資料到底有什麼？</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜先盤點，不建立 Dashboard</strong><button class="copy-prompt" data-copy-target="prompt-15"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-15">請使用 `learning-profile-diagnostics` 檢查目前的 SAAA 資料，先不要建立 Dashboard。告訴我有哪些年級、科目、班級、學生與資料類型，以及目前可以進行哪些分析。</pre>
+    </div>
+    <div class="side-note">
+      <h3>先確認資料是否包含</h3>
+      <div class="stage-grid" style="grid-template-columns:1fr 1fr">
+        <div>作答反應</div><div>能力向度</div><div>選項</div><div>等級資料</div>
+      </div>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:13px">先知道「有什麼資料、可以回答什麼問題」，再決定要往哪一層下探。</div>
+</section>
+
+<!-- 16 Grade -->
+<section style="padding-top:4px">
+  <div class="kicker">16 · 年級：發生什麼？</div>
+  <h2 style="margin:.12em 0 .12em">五年級（七年級）整體發生什麼？</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜先說證據，不急著給建議</strong><button class="copy-prompt" data-copy-target="prompt-16"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-16">幫我分析五年級目前最值得注意的三個現象，請先說資料證據，不要急著給教學建議。</pre>
+    </div>
+    <div class="side-note">
+      <h3>觀察四個面向</h3>
+      <ul><li>整體表現？</li><li>班級差異？</li><li>能力向度？</li><li>共同問題？</li></ul>
+    </div>
+  </div>
+  <div class="focus-question">如果是你，你第一眼會先看哪一個？</div>
+</section>
+
+<!-- 17 Class -->
+<section style="padding-top:4px">
+  <div class="kicker">17 · 班級：問題集中在哪？</div>
+  <h2 style="margin:.12em 0 .12em">全年級的問題，每個班都一樣嗎？</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜比較班級與年級</strong><button class="copy-prompt" data-copy-target="prompt-17"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-17">請比較各班與年級整體，找出一個最值得進一步下探的班級，並說明為什麼。不要只依班平均高低判斷。</pre>
+    </div>
+    <div class="side-note">
+      <h3>不要只看平均</h3>
+      <p>還要一起看班級與年級的差距、共同失分題、能力向度與作答型態。</p>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:13px">班平均告訴你「哪裡不同」，題目與能力向度才開始告訴你「差在哪裡」。</div>
+</section>
+
+<!-- 18 Item -->
+<section style="padding-top:4px">
+  <div class="kicker">18 · 題目：到底錯在哪裡？</div>
+  <h2 style="margin:.12em 0 .12em;font-size:.95em">低分還不夠，我要知道學生錯在哪</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜找出最值得先看的題目</strong><button class="copy-prompt" data-copy-target="prompt-18"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-18">在這個班中，找出最值得教師先查看的 3 道題，說明本班與年級的答對差距、共同失分情形，以及有選項資料時的主要錯誤反應。</pre>
+    </div>
+    <div class="side-note">
+      <h3>每一道題都要有證據</h3>
+      <ul><li>本班與年級的答對差距</li><li>是否為共同失分</li><li>錯誤選項集中情形</li></ul>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:13px">題目診斷的目的不是排名，而是確認可能的迷思概念或錯誤策略。</div>
+</section>
+
+<!-- 19 Grouping -->
+<section style="padding-top:4px">
+  <div class="kicker">19 · 分組：為什麼這些學生放在一起？</div>
+  <h2 style="margin:.12em 0 .12em">分組不是把學生分完就結束</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜建立有證據的教學分組</strong><button class="copy-prompt" data-copy-target="prompt-19"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-19">請建立這個班的教學分組。每一組都要先說明「為什麼是這一組」，列出本組平均、與全班差距、優先確認向度、共同失分題與作答型態證據，再提出不同的教學活動、教師提問與成功判準。</pre>
+    </div>
+    <div class="side-note">
+      <h3>分組之後還要回答</h3>
+      <ul><li>為什麼是這一組？</li><li>要做什麼不同活動？</li><li>如何判斷學會了？</li></ul>
+    </div>
+  </div>
+  <div class="focus-question">你有沒有發現，兩組的教師提問不應該一樣？</div>
+</section>
+
+<!-- 20 Individual -->
+<section style="padding-top:4px">
+  <div class="kicker">20 · 個人：同一組學生也不完全一樣</div>
+  <h2 style="margin:.12em 0 .12em">最後才下探到個人</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜挑一位有代表性的學生</strong><button class="copy-prompt" data-copy-target="prompt-20"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-20">請從這個班挑一位具有代表性、值得進一步了解的學生，不必挑最低分學生。說明他的整體表現、優先確認向度、代表性失分題與作答型態，最後提出一週內可以執行的微型教學介入計畫。</pre>
+    </div>
+    <div class="side-note">
+      <h3>個人輪廓不是貼標籤</h3>
+      <p>選擇具有代表性的學生，目的是把班級層級的發現轉成可執行、可追蹤的一週介入。</p>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:13px">順序很重要：先看年級與班級，再看題目與分組，最後才下探到個人。</div>
+</section>
+
+<!-- 21 Progress -->
+<section style="padding-top:4px">
+  <div class="kicker">21 · 進步／退步分析</div>
+  <h2 style="margin:.12em 0 .1em">年度差異要分清楚：觀察、解釋、待確認因素</h2>
+  <div class="prompt-stack">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜比較 115 年與 114 年</strong><button class="copy-prompt" data-copy-target="prompt-21-main"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-21-main" style="max-height:220px">請比較 115 年與 114 年五年級的學力結果，找出主要進步與退步發生在哪些科目、能力向度、班級與題目。請分成「資料直接觀察到的結果」、「資料支持的合理解釋」與「仍需其他證據確認的可能因素」，並提出下一步值得追蹤的教學重點。不要把年度差異直接解釋成因果。</pre>
+    </div>
+    <div class="prompt-card" style="border-left-color:var(--mint)">
+      <div class="prompt-head"><strong>追問｜如果只能先處理一件事</strong><button class="copy-prompt" data-copy-target="prompt-21-follow"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-21-follow" style="padding-top:10px;padding-bottom:10px">如果只能優先處理一個退步現象，應該先處理哪一個？為什麼？</pre>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:9px"><b>提醒：</b>不同年度通常是不同學生群體；年度差異可以描述，但不能直接視為個人成長或因果證據。</div>
+</section>
+
+<!-- 22 Dashboard -->
+<section style="padding-top:4px">
+  <div class="kicker">22 · 收尾：最後才建立 Dashboard</div>
+  <h2 style="margin:.12em 0 .12em">把剛才的分析整理成一個 Dashboard</h2>
+  <div class="prompt-layout">
+    <div class="prompt-card">
+      <div class="prompt-head"><strong>Prompt｜整合分析結果</strong><button class="copy-prompt" data-copy-target="prompt-22"><span class="copy-label">一鍵複製</span></button></div>
+      <pre class="prompt-text" id="prompt-22">請把剛才完成的年級、班級、題目、教學分組與個人分析整合成教師版 `dashboard.html`。保留資料證據與教學行動，讓使用者可以從「年級 → 班級 → 題目／學生」逐層下探。</pre>
+    </div>
+    <div class="side-note">
+      <h3>Dashboard 的結構</h3>
+      <ul><li>年級：發生什麼？</li><li>班級：問題在哪？</li><li>題目／學生：如何下探？</li><li>教學行動：下一步怎麼做？</li></ul>
+    </div>
+  </div>
+  <div class="takeaway" style="margin-top:13px">Dashboard 並不是 AI 隨便畫一個網站，而是把剛剛一步一步完成的分析整合起來。</div>
+</section>
 
 </div>
 </div>
@@ -367,75 +592,36 @@ Reveal.initialize({
   center:false
 });
 
-// --- Local poll (no Firebase) ---
-const LS_KEY='opencode-0904-poll-v1';
-const els={
-  yes:document.getElementById('voteYes'),
-  no:document.getElementById('voteNo'),
-  reset:document.getElementById('resetBtn'),
-  total:document.getElementById('totalVotes'),
-  yesPct:document.getElementById('yesPct'),
-  noPct:document.getElementById('noPct'),
-  barYes:document.getElementById('barYes'),
-  barNo:document.getElementById('barNo'),
-  valYes:document.getElementById('valYes'),
-  valNo:document.getElementById('valNo'),
-  hint:document.getElementById('voteHint')
-};
-function load(){
-  try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {yes:7,no:9, my:'', seeded:true} }catch{ return {yes:7,no:9, my:'', seeded:true} }
-}
-function save(s){ localStorage.setItem(LS_KEY, JSON.stringify(s)) }
-let state=load();
-function render(){
-  const total=state.yes+state.no;
-  const yp= total? Math.round(state.yes/total*100):0;
-  const np= total? 100-yp:0;
-  els.total.textContent=String(total);
-  els.yesPct.textContent=yp+'%';
-  els.noPct.textContent=np+'%';
-  els.barYes.style.width=yp+'%';
-  els.barNo.style.width=np+'%';
-  els.valYes.textContent= state.yes+' 票 · '+yp+'%';
-  els.valNo.textContent= state.no+' 票 · '+np+'%';
-  els.yes.style.outline = state.my==='yes' ? '2px solid #ffe600' : 'none';
-  els.no.style.outline = state.my==='no' ? '2px solid #60a5fa' : 'none';
-  els.yes.textContent = state.my==='yes' ? '✓ 是，曾使用' : '是，曾使用';
-  els.no.textContent = state.my==='no' ? '✓ 否，尚未使用' : '否，尚未使用';
-}
-function vote(choice){
-  if(state.my===choice){
-    if(choice==='yes') state.yes=Math.max(0,state.yes-1);
-    else state.no=Math.max(0,state.no-1);
-    state.my='';
-  } else {
-    if(state.my==='yes') state.yes=Math.max(0,state.yes-1);
-    if(state.my==='no') state.no=Math.max(0,state.no-1);
-    if(choice==='yes') state.yes+=1; else state.no+=1;
-    state.my=choice;
+// --- One-click prompt copy ---
+async function copyPromptText(text){
+  try{
+    await navigator.clipboard.writeText(text);
+    return true;
+  }catch{
+    const textarea=document.createElement('textarea');
+    textarea.value=text;
+    textarea.setAttribute('readonly','');
+    textarea.style.position='fixed';
+    textarea.style.opacity='0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied=document.execCommand('copy');
+    textarea.remove();
+    return copied;
   }
-  save(state); render();
 }
-els.yes.addEventListener('click',()=>vote('yes'));
-els.no.addEventListener('click',()=>vote('no'));
-els.reset.addEventListener('click',()=>{
-  state={yes:0,no:0,my:'',seeded:false};
-  save(state); render();
-  els.hint.textContent='已重設，可開始引導投票';
-  setTimeout(()=> els.hint.textContent='採單機防重複投票機制（localStorage）', 1800);
-});
-render();
 
-// --- Copy prompt ---
-const copyBtn=document.getElementById('copyPromptBtn');
-const copyHint=document.getElementById('copyPromptHint');
-if(copyBtn){
-  copyBtn.addEventListener('click', async ()=>{
-    const txt=document.getElementById('fullPromptText')?.textContent||'';
-    try{ await navigator.clipboard.writeText(txt); copyHint.textContent='已複製'; }catch{ copyHint.textContent='請手動全選複製'; }
-    setTimeout(()=> copyHint.textContent='', 1800);
+document.querySelectorAll('.copy-prompt').forEach(button=>{
+  button.addEventListener('click',async()=>{
+    const target=document.getElementById(button.dataset.copyTarget);
+    const label=button.querySelector('.copy-label');
+    if(!target||!label) return;
+    const original=label.textContent;
+    const copied=await copyPromptText(target.textContent.trim());
+    label.textContent=copied?'已複製 ✓':'請手動複製';
+    setTimeout(()=>{ label.textContent=original; },1600);
   });
-}
+});
 </script>
 </body>
 </html>
